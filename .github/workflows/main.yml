@@ -44,7 +44,7 @@ jobs:
             docker rmi ${{ secrets.DOCKER_USERNAME }}/clipsprint:latest || true
             docker pull ${{ secrets.DOCKER_USERNAME }}/clipsprint:latest
             docker run -d --name clipsprint --restart always \
-              -p 3000:3000 \
+              -p 127.0.0.1:3000:3000 \
               -e GROQ_API_KEY=${{ secrets.GROQ_API_KEY }} \
               -e NEXTAUTH_URL=${{ secrets.NEXTAUTH_URL }} \
               -e NEXTAUTH_SECRET=${{ secrets.NEXTAUTH_SECRET }} \
