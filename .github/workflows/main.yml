@@ -62,7 +62,7 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_NOTIFY_TO }}
           message: |
-            🚀 ClipSprint deployed!
+            🚀 ClipSprint deployed!!
             
             Status: ${{ needs.deploy.result }}
             Commit: ${{ github.sha }}
