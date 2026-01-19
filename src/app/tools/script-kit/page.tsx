@@ -5,7 +5,7 @@ import NavHeader from "@/components/NavHeader";
 import GenerateForm from "@/components/GenerateForm";
 import ResultTabs from "@/components/ResultTabs";
 import HistoryPanel from "@/components/HistoryPanel";
-import type { GenerateRequest, GenerateResponse, ApiResult } from "@/types";
+import type { GenerateRequest, GenerateResponse } from "@/types";
 import { addToHistory } from "@/lib/storage";
 import { useLang } from "@/lib/useLang";
 import { getNavTexts, getToolConfigsTexts } from "@/lib/i18n";
@@ -32,9 +32,7 @@ export default function ScriptKitPage() {
         body: JSON.stringify(request),
       });
 
-      const data = (await res.json()) as ApiResult extends { success: true }
-        ? GenerateResponse
-        : { error: { code: string; message: string } };
+      const data = await res.json();
 
       if (!res.ok) {
         const errData = data as { error: { code: string; message: string } };
