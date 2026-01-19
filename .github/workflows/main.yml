@@ -61,7 +61,6 @@ jobs:
         uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_NOTIFY_TO }}
-          token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           message: |
             🚀 ClipSprint deployed!
             
